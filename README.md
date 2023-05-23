@@ -8,6 +8,7 @@
 |  mysql  | mysql数据库             |
 | sqlite  | sqlite数据库            |
 | strings | strings截取等           |
+|   ini   | ini配置文件              |
 ### 入口函数
 >#### 例如：index.lua
 ```lua
@@ -54,5 +55,7 @@ function main(request)
         Title="LuaWeb",
         Version=version,
     })
+    -- 响应体下载文件
+    request.DownFile("文件路径")
 end
 ```
