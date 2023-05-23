@@ -56,6 +56,6 @@ function main(request)
         Version=version,
     })
     -- 响应体下载文件
-    request.DownFile("文件路径")
+    Is = request.DownFile("文件路径")
 end
 ```
