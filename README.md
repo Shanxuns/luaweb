@@ -1,5 +1,16 @@
 # LuaWeb
 >#### 使用golang开发的lua解释器，以及web服务的实现，初心是为了学习和像php一样简单搭建与编写web服务
+
+### 启动命令
+```
+linux: ./linux_amd64_LuaWeb ./config.ini
+
+windows: ./windows_amd64_LuaWeb.exe ./config.ini
+
+macOS: ./macOS_amd64_LuaWeb ./config.ini
+```
+#### 也可以直接启动不要配置文件默认http协议80端口
+
 ### 标准库
 |   库名    | 简介                   |
 |:-------:|:---------------------|
