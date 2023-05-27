@@ -3,11 +3,14 @@
 
 ### 启动命令
 ```shell
-linux: ./linux_amd64_LuaWeb ./config.ini
+linux: 
+./linux_amd64_LuaWeb ./config.ini
 
-windows: ./windows_amd64_LuaWeb.exe ./config.ini
+windows: 
+./windows_amd64_LuaWeb.exe ./config.ini
 
-macOS: ./macOS_amd64_LuaWeb ./config.ini
+macOS: 
+./macOS_amd64_LuaWeb ./config.ini
 ```
 #### 也可以直接启动不要配置文件默认http协议80端口
 
