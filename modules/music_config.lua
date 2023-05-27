@@ -1,6 +1,3 @@
-# modules 目录（lua自定义模块）
-
-```lua
 function music_config()
     local ini = require("ini")
     if ini.open("config.ini") then
@@ -16,9 +13,3 @@ end
 return {
     music_config = music_config
 }
-```
->#### 使用require函数调用mysql_config为文件名
-```lua
-local mysql_config = require("./mysql_config")
-```
-#### 实例：[music_config.lua](music_config.lua)
