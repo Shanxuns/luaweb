@@ -8,6 +8,7 @@
     <title>{{.Title}}</title>
 </head>
 <body>
+<h1>LuaWeb服务</h1>
 {{.Body}}
 </body>
 </html>

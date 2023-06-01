@@ -12,6 +12,31 @@ windows:
 macOS: 
 ./macOS_amd64_LuaWeb ./config.ini
 ```
+
+### 配置文件
+```ini
+// web服务端口
+port = 8080
+// 是否开启HTTPS
+TLS = false
+// 证书
+certFile = certFile.pem
+keyFile = keyFile.pem
+// 是否开启内网穿透
+frp = true
+[FRP]
+// 服务域名或ip
+ServerAddr = frp.basicoa.net
+// 服务端口
+ServerPort = 7000
+// 服务Token
+Token = freefrp.net
+// 服务名（自定义）
+Name = cs
+// 域名（解析ServerAddr的域名或ip）
+Host = luaweb.basicoa.net
+```
+
 #### 也可以直接启动不要配置文件默认http协议80端口
 
 ### 标准库
