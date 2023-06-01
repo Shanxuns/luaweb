@@ -13,6 +13,8 @@ macOS:
 ./macOS_amd64_LuaWeb ./config.ini
 ```
 
+### 目前使用的免费frp服务，来自 [freefrp](https://freefrp.net)的服务
+
 ### 配置文件
 ```ini
 // web服务端口
