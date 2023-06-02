@@ -50,6 +50,7 @@ Host = luaweb.basicoa.net
 | sqlite  | sqlite数据库            |
 | strings | strings截取等           |
 |   ini   | ini配置文件              |
+
 ### 入口函数
 >#### 例如：index.lua
 ```lua
@@ -100,3 +101,214 @@ function main(request)
     Is = request.DownFile("文件路径")
 end
 ```
+
+
+### http
+```lua
+local http = require("http")
+response, error_message = http.request("GET", "http://example.com", {
+    query="page=1",
+    timeout="30s",
+    headers={
+        Accept="*/*"
+    }
+})
+
+```
+
+### http.delete(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.get(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.head(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.patch(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| body    | String | Request body. |
+| form    | String | Deprecated. URL encoded request body. This will also set the `Content-Type` header to `application/x-www-form-urlencoded` |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.post(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| body    | String | Request body. |
+| form    | String | Deprecated. URL encoded request body. This will also set the `Content-Type` header to `application/x-www-form-urlencoded` |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.put(url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| body    | String | Request body. |
+| form    | String | Deprecated. URL encoded request body. This will also set the `Content-Type` header to `application/x-www-form-urlencoded` |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.request(method, url [, options])
+
+**Attributes**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| method  | String | The HTTP request method |
+| url     | String | URL of the resource to load |
+| options | Table  | Additional options |
+
+**Options**
+
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| query   | String | URL encoded query params |
+| cookies | Table  | Additional cookies to send with the request |
+| body    | String | Request body. |
+| form    | String | Deprecated. URL encoded request body. This will also set the `Content-Type` header to `application/x-www-form-urlencoded` |
+| headers | Table  | Additional headers to send with the request |
+| timeout | Number/String | Request timeout. Number of seconds or String such as "1h" |
+| auth    | Table  | Username and password for HTTP basic auth. Table keys are *user* for username, *pass* for passwod. `auth={user="user", pass="pass"}` |
+
+**Returns**
+
+[http.response](#httpresponse) or (nil, error message)
+
+### http.request_batch(requests)
+
+**Attributes**
+
+| Name     | Type  | Description |
+| -------- | ----- | ----------- |
+| requests | Table | A table of requests to send. Each request item is by itself a table containing [http.request](#httprequestmethod-url--options) parameters for the request |
+
+**Returns**
+
+[[http.response](#httpresponse)] or ([[http.response](#httpresponse)], [error message])
+
+### http.response
+
+The `http.response` table contains information about a completed HTTP request.
+
+**Attributes**
+
+| Name        | Type   | Description |
+| ----------- | ------ | ----------- |
+| body        | String | The HTTP response body |
+| body_size   | Number | The size of the HTTP reponse body in bytes |
+| headers     | Table  | The HTTP response headers |
+| cookies     | Table  | The cookies sent by the server in the HTTP response |
+| status_code | Number | The HTTP response status code |
+| url         | String | The final URL the request ended pointing to after redirects |
