@@ -113,7 +113,6 @@ response, error_message = http.request("GET", "http://example.com", {
         Accept="*/*"
     }
 })
-
 ```
 
 ### http.delete(url [, options])
